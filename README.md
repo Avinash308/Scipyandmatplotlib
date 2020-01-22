@@ -39,4 +39,27 @@ plt.plot(days, yearly_temps(days, *res_min), 'b-')
 plt.xlabel('Month')
 plt.ylabel('Temperature ($^\circ$C)')
 
-plt.show()                                      
+plt.show() 
+
+#Matplotlib
+#creating pie chart using male female proportion
+labels=['male','female']
+sizes=Titanic.sex.value_counts()
+fig1,ax1=plt.subplots()
+ax1.pie(sizes,labels=labels,autopct='%1.1f%%',colors=['Blue','Red'])
+
+
+#creating scatter plot using fare paid and age differ the plot color by gender
+
+plt.figure()
+category1=Titanic[Titanic.sex=='male'].plot.scatter('age','fare',color='red',label='male')
+Titanic[Titanic.sex=='female'].plot.scatter('age','fare',color='blue',label='female',ax=category1)
+
+
+
+
+
+
+
+
+
